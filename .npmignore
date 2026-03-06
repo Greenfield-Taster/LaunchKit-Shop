@@ -6,4 +6,5 @@ docs
 node_modules
 dist
 dist-ssr
-*.md
+CLAUDE.md
+MEMORY.md
