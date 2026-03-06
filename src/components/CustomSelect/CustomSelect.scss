@@ -1,0 +1,139 @@
+@use "../../styles/variables" as v;
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 200px;
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: v.$spacing-3;
+    padding: v.$spacing-2 v.$spacing-4;
+    background: v.$neutral-0;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-base;
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-medium;
+    color: v.$color-text-primary;
+    cursor: pointer;
+    transition: all v.$transition-fast;
+    user-select: none;
+
+    &:hover {
+      border-color: v.$color-border-dark;
+      background: v.$neutral-50;
+    }
+
+    &--open {
+      border-color: v.$brand-primary-500;
+      box-shadow: 0 0 0 3px v.$brand-primary-50;
+    }
+  }
+
+  &__value {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: v.$color-text-secondary;
+    transition: transform v.$transition-fast;
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + v.$spacing-1);
+    left: 0;
+    right: 0;
+    background: v.$neutral-0;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-base;
+    box-shadow: v.$shadow-lg;
+    z-index: v.$z-dropdown;
+    max-height: 300px;
+    overflow-y: auto;
+    animation: slideDown 0.2s ease-out;
+
+    // Кастомний скролбар
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: v.$neutral-50;
+      border-radius: v.$radius-full;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: v.$neutral-300;
+      border-radius: v.$radius-full;
+
+      &:hover {
+        background: v.$neutral-400;
+      }
+    }
+  }
+
+  &__option {
+    padding: v.$spacing-3 v.$spacing-4;
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-medium;
+    color: v.$color-text-primary;
+    cursor: pointer;
+    transition: all v.$transition-fast;
+
+    &:hover {
+      background: v.$brand-primary-50;
+    }
+
+    &--selected {
+      background: v.$brand-primary-500;
+      color: v.$color-text-inverse;
+      font-weight: v.$font-weight-semibold;
+
+      &:hover {
+        background: v.$brand-primary-600;
+      }
+    }
+
+    &:first-child {
+      border-radius: v.$radius-base v.$radius-base 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 v.$radius-base v.$radius-base;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ========================================
+// RESPONSIVE
+// ========================================
+
+@media (max-width: v.$breakpoint-md) {
+  .custom-select {
+    min-width: auto;
+    width: 100%;
+  }
+}

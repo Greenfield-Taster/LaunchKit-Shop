@@ -1,0 +1,149 @@
+@use "../../styles/variables" as v;
+
+.confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: v.$z-modal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: v.$spacing-4;
+  animation: fadeIn 0.2s ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.confirm-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 20, 25, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.confirm-modal__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  background: v.$neutral-0;
+  border-radius: v.$radius-xl;
+  box-shadow: v.$shadow-xl;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (max-width: v.$breakpoint-sm) {
+    max-width: 100%;
+  }
+}
+
+.confirm-modal__content {
+  padding: v.$spacing-8;
+
+  @media (max-width: v.$breakpoint-sm) {
+    padding: v.$spacing-6;
+  }
+}
+
+.confirm-modal__title {
+  font-size: v.$font-size-2xl;
+  font-weight: v.$font-weight-bold;
+  color: v.$neutral-800;
+  margin-bottom: v.$spacing-3;
+  line-height: v.$line-height-tight;
+
+  @media (max-width: v.$breakpoint-sm) {
+    font-size: v.$font-size-xl;
+  }
+}
+
+.confirm-modal__message {
+  font-size: v.$font-size-base;
+  color: v.$neutral-600;
+  line-height: v.$line-height-relaxed;
+  margin-bottom: v.$spacing-6;
+
+  @media (max-width: v.$breakpoint-sm) {
+    font-size: v.$font-size-sm;
+    margin-bottom: v.$spacing-5;
+  }
+}
+
+.confirm-modal__actions {
+  display: flex;
+  gap: v.$spacing-3;
+  justify-content: flex-end;
+
+  @media (max-width: v.$breakpoint-sm) {
+    flex-direction: column-reverse;
+    gap: v.$spacing-2;
+  }
+}
+
+.confirm-modal__button {
+  padding: v.$spacing-3 v.$spacing-6;
+  border: none;
+  border-radius: v.$radius-button;
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-semibold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: v.$font-family-base;
+  min-width: 100px;
+
+  &--cancel {
+    background: v.$neutral-100;
+    color: v.$neutral-700;
+
+    &:hover {
+      background: v.$neutral-200;
+      color: v.$neutral-800;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  &--confirm {
+    background: v.$brand-primary-500;
+    color: v.$neutral-0;
+
+    &:hover {
+      background: v.$brand-primary-600;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  @media (max-width: v.$breakpoint-sm) {
+    width: 100%;
+    min-width: auto;
+    padding: v.$spacing-3 v.$spacing-4;
+    font-size: v.$font-size-sm;
+  }
+}
