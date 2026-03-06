@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { SlidersHorizontal } from "lucide-react";
 import ProductCard from "../components/ProductCard/ProductCard";
 import CatalogFilters from "../components/CatalogFilters/CatalogFilters";
+import CustomSelect from "../components/CustomSelect/CustomSelect";
 import usePageMeta from "../hooks/usePageMeta";
 import useScrollLock from "../hooks/useScrollLock";
 import { SEO } from "../utils/seoData";
@@ -141,19 +142,13 @@ const Catalog = () => {
           <div className="catalog__controls">
             <div className="catalog__sort">
               <span className="catalog__sort-label">Сортувати:</span>
-              <select
-                className="catalog__sort-select"
+              <CustomSelect
                 value={params.sort}
-                onChange={(e) =>
-                  updateURL({ ...params, sort: e.target.value, page: 1 })
+                onChange={(value) =>
+                  updateURL({ ...params, sort: value, page: 1 })
                 }
-              >
-                {sortOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </select>
+                options={sortOptions}
+              />
             </div>
             <p className="catalog__count">
               Знайдено: {filteredProducts.length} товарів

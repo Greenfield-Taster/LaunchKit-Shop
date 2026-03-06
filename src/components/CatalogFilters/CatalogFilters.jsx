@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
+import CustomSelect from "../CustomSelect/CustomSelect";
 import "./CatalogFilters.scss";
 
 const CatalogFilters = ({
@@ -58,8 +59,8 @@ const CatalogFilters = ({
     });
   };
 
-  const handleSortChange = (e) => {
-    setDraft((prev) => ({ ...prev, sort: e.target.value }));
+  const handleSortChange = (value) => {
+    setDraft((prev) => ({ ...prev, sort: value }));
   };
 
   const handleInStockToggle = () => {
@@ -210,17 +211,11 @@ const CatalogFilters = ({
 
         <div className="filter-section">
           <h3 className="filter-section__title">Сортування</h3>
-          <select
-            className="filter-section__select"
+          <CustomSelect
             value={draft.sort || "default"}
             onChange={handleSortChange}
-          >
-            {sortOptions.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
+            options={sortOptions}
+          />
         </div>
 
         <div className="filter-section">
