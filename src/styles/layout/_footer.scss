@@ -1,0 +1,335 @@
+@use "../variables" as v;
+
+.footer {
+  background: v.$brand-primary-700;
+  color: v.$neutral-200;
+  border-top: 1px solid v.$neutral-800;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.footer__container {
+  width: 100%;
+  max-width: v.$breakpoint-3xl;
+  margin-inline: auto;
+  padding: v.$spacing-24 v.$spacing-20 v.$spacing-8;
+
+  @media (max-width: #{v.$breakpoint-lg - 1px}) {
+    padding: v.$spacing-16 v.$spacing-8 v.$spacing-10;
+  }
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    padding: v.$spacing-12 v.$spacing-6 v.$spacing-8;
+  }
+
+  @media (max-width: #{v.$breakpoint-sm - 1px}) {
+    padding: v.$spacing-10 v.$spacing-4 v.$spacing-6;
+  }
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.5fr 1.5fr;
+  gap: v.$spacing-16;
+  margin-bottom: v.$spacing-16;
+
+  @media (min-width: v.$breakpoint-xl) {
+    gap: v.$spacing-20;
+    margin-bottom: v.$spacing-20;
+  }
+
+  @media (max-width: #{v.$breakpoint-lg - 1px}) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: v.$spacing-12;
+    margin-bottom: v.$spacing-12;
+  }
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    grid-template-columns: 1fr;
+    gap: v.$spacing-10;
+    text-align: center;
+    margin-bottom: v.$spacing-10;
+  }
+
+  @media (max-width: #{v.$breakpoint-sm - 1px}) {
+    gap: v.$spacing-8;
+  }
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-6;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    align-items: center;
+  }
+}
+
+.footer__brand-logo {
+  font-family: v.$font-family-base;
+  font-size: v.$font-size-4xl;
+  font-weight: v.$font-weight-bold;
+  color: v.$neutral-0;
+  margin-bottom: 0;
+
+  @media (max-width: #{v.$breakpoint-lg - 1px}) {
+    font-size: v.$font-size-3xl;
+  }
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    font-size: v.$font-size-2xl;
+  }
+}
+
+.footer__brand-social {
+  display: flex;
+  gap: v.$spacing-4;
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    justify-content: center;
+  }
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: v.$neutral-800;
+  border-radius: v.$radius-lg;
+  color: v.$neutral-300;
+  text-decoration: none;
+  transition: all v.$transition-fast v.$transition-timing;
+  border: 1px solid v.$neutral-700;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    background: v.$brand-primary-500;
+    color: v.$neutral-0;
+    border-color: v.$brand-primary-500;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    width: 44px;
+    height: 44px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-6;
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    align-items: center;
+    gap: v.$spacing-5;
+  }
+}
+
+.footer__section-title {
+  font-family: v.$font-family-base;
+  font-size: v.$font-size-lg;
+  font-weight: v.$font-weight-semibold;
+  color: v.$neutral-0;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wide;
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    font-size: v.$font-size-base;
+  }
+}
+
+.footer__section-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-4;
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    align-items: center;
+    gap: v.$spacing-3;
+  }
+
+  li {
+    display: flex;
+  }
+
+  a {
+    color: v.$neutral-400;
+    text-decoration: none;
+    font-size: v.$font-size-base;
+    transition: color v.$transition-fast v.$transition-timing;
+    line-height: v.$line-height-normal;
+
+    &:hover {
+      color: v.$neutral-0;
+    }
+
+    @media (max-width: #{v.$breakpoint-md - 1px}) {
+      font-size: v.$font-size-sm;
+    }
+  }
+}
+
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-4;
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    align-items: center;
+    gap: v.$spacing-3;
+  }
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-3;
+  color: v.$neutral-400;
+  font-size: v.$font-size-base;
+  line-height: v.$line-height-normal;
+  text-decoration: none;
+  transition: color v.$transition-fast v.$transition-timing;
+
+  svg {
+    color: v.$brand-primary-400;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    color: v.$neutral-0;
+  }
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    justify-content: center;
+    font-size: v.$font-size-sm;
+  }
+
+  @media (max-width: #{v.$breakpoint-sm - 1px}) {
+    font-size: v.$font-size-xs;
+    gap: v.$spacing-2;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.footer__payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-4;
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    align-items: center;
+    gap: v.$spacing-3;
+  }
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-3;
+  color: v.$neutral-400;
+  font-size: v.$font-size-base;
+  line-height: v.$line-height-normal;
+
+  svg {
+    color: v.$brand-primary-400;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    justify-content: center;
+    font-size: v.$font-size-sm;
+  }
+
+  @media (max-width: #{v.$breakpoint-sm - 1px}) {
+    font-size: v.$font-size-xs;
+    gap: v.$spacing-2;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.footer__bottom {
+  padding-top: v.$spacing-10;
+  border-top: 1px solid v.$brand-primary-500;
+  text-align: center;
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    padding-top: v.$spacing-8;
+  }
+
+  @media (max-width: #{v.$breakpoint-sm - 1px}) {
+    padding-top: v.$spacing-6;
+  }
+}
+
+.footer__copyright {
+  color: v.$neutral-500;
+  font-size: v.$font-size-base;
+  line-height: v.$line-height-normal;
+
+  @media (max-width: #{v.$breakpoint-md - 1px}) {
+    font-size: v.$font-size-sm;
+  }
+
+  @media (max-width: #{v.$breakpoint-sm - 1px}) {
+    font-size: v.$font-size-xs;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer__container {
+    padding: v.$spacing-8 v.$spacing-3 v.$spacing-5;
+  }
+
+  .footer__content {
+    gap: v.$spacing-6;
+  }
+
+  .footer__brand-logo {
+    font-size: v.$font-size-xl;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
