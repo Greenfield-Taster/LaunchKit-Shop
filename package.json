@@ -1,8 +1,27 @@
 {
-  "name": "launchkit-shop",
-  "private": true,
+  "name": "@greenfield-taster/launchkit-shop",
   "version": "1.0.0",
   "type": "module",
+  "description": "CLI wizard to scaffold a ready-to-use React shop template with auto-generated color palette",
+  "keywords": [
+    "shop",
+    "ecommerce",
+    "template",
+    "react",
+    "vite",
+    "mui",
+    "scaffold",
+    "cli"
+  ],
+  "author": "greenfield-taster",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Greenfield-Taster/LaunchKit-Shop.git"
+  },
+  "bin": {
+    "launchkit-shop": "cli/create.js"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -1,0 +1,9 @@
+.git
+.claude
+.gitignore
+.npmignore
+docs
+node_modules
+dist
+dist-ssr
+*.md
