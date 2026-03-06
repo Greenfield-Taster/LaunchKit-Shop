@@ -33,7 +33,6 @@ const ProductGallery = ({ images, alt, priority = false }) => {
       if (index === selectedIndex || isTransitioning) return;
 
       setIsTransitioning(true);
-      setMainImageLoaded(false);
       setSelectedIndex(index);
 
       setTimeout(() => {

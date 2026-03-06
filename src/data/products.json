@@ -7,7 +7,7 @@
     "oldPrice": 3000,
     "category": ["popular", "sale"],
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "Натуральний" },
       { "key": "Вага", "value": "1.2 кг" },
@@ -25,7 +25,7 @@
     "price": 1200,
     "category": ["popular"],
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "Комбінований" },
       { "key": "Вага", "value": "0.8 кг" },
@@ -43,7 +43,7 @@
     "price": 800,
     "category": ["popular", "new"],
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "Синтетичний" },
       { "key": "Вага", "value": "0.5 кг" },
@@ -61,7 +61,7 @@
     "oldPrice": 5200,
     "category": ["sale"],
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "Преміальний" },
       { "key": "Вага", "value": "2.1 кг" },
@@ -80,7 +80,7 @@
     "price": 3500,
     "category": ["new"],
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "Композитний" },
       { "key": "Вага", "value": "1.5 кг" },
@@ -99,7 +99,7 @@
     "oldPrice": 1900,
     "category": ["popular", "sale"],
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "Натуральний" },
       { "key": "Вага", "value": "0.9 кг" },
@@ -116,7 +116,7 @@
     "price": 2100,
     "category": ["new"],
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "100% органічний" },
       { "key": "Вага", "value": "0.7 кг" },
@@ -134,7 +134,7 @@
     "price": 3800,
     "category": ["popular"],
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "Посилений" },
       { "key": "Вага", "value": "1.8 кг" },
@@ -154,7 +154,7 @@
     "category": ["new", "sale"],
     "oldPrice": 900,
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "Полімерний" },
       { "key": "Вага", "value": "0.3 кг" },
@@ -171,7 +171,7 @@
     "price": 1800,
     "category": ["popular"],
     "image": "/image-placeholder.png",
-    "images": ["/image-placeholder.png", "/image-placeholder.png"],
+    "images": ["/image-placeholder.png", "/image-placeholder-2.png"],
     "characteristics": [
       { "key": "Матеріал", "value": "Текстильний" },
       { "key": "Вага", "value": "1.0 кг" },
