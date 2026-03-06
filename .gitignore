@@ -31,3 +31,4 @@ dist-ssr
 
 # Docs
 docs/
+settings.local.json
