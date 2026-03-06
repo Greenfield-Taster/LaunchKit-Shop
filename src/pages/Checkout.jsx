@@ -411,13 +411,11 @@ const Checkout = () => {
               <div className="checkout__items">
                 {items.map((item, index) => (
                   <div key={index} className="checkout__item">
-                    {item.image && (
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="checkout__item-image"
-                      />
-                    )}
+                    <img
+                      src={item.image || "/image-placeholder.png"}
+                      alt={item.title}
+                      className="checkout__item-image"
+                    />
                     <div className="checkout__item-info">
                       <h3 className="checkout__item-title">{item.title}</h3>
                       <p className="checkout__item-price">

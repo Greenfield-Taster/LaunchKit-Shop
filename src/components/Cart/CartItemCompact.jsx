@@ -1,8 +1,10 @@
 import { useState, useCallback } from "react";
 import "./CartItemCompact.scss";
 
+const FALLBACK_IMAGE = "/image-placeholder.png";
+
 const CartItemCompact = ({ item, onUpdateQty, onRemove, currency = "₴" }) => {
-  const { id, title, price, qty, image } = item;
+  const { id, title, price, qty, image = FALLBACK_IMAGE } = item;
   const [imageLoaded, setImageLoaded] = useState(false);
   const handleImageLoad = useCallback(() => setImageLoaded(true), []);
 
