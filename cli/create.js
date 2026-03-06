@@ -199,8 +199,8 @@ function normalizeHex(hex) {
 
 async function main() {
   console.log("");
-  console.log("  Shop Skeleton - створення нового проекту");
-  console.log("  =========================================");
+  console.log("  LaunchKit Shop - створення нового проекту");
+  console.log("  ==========================================");
   console.log("");
 
   // 1. Project name
