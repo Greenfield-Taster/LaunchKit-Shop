@@ -1,10 +1,13 @@
 export const SITE_NAME = "My Shop";
 export const BASE_URL = "https://myshop.com.ua";
 export const DEFAULT_DESCRIPTION = "Ваш надійний інтернет-магазин";
-export const DEFAULT_OG_IMAGE = "/og-image.jpg";
+export const DEFAULT_OG_IMAGE = "/image-placeholder.png";
 
 export const SEO = {
-  home: { title: "My Shop — Інтернет-магазин", description: "Ваш надійний інтернет-магазин" },
+  home: {
+    title: "My Shop — Інтернет-магазин",
+    description: "Ваш надійний інтернет-магазин",
+  },
   catalog: { title: "Каталог — My Shop", description: "Каталог товарів" },
   contacts: { title: "Контакти — My Shop", description: "Зв'яжіться з нами" },
   checkout: { title: "Оформлення замовлення — My Shop", description: "" },
