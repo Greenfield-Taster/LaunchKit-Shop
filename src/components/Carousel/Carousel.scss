@@ -1,0 +1,151 @@
+@use "../../styles/variables" as v;
+
+.carousel {
+  padding: v.$spacing-12 0;
+  background: v.$neutral-100;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+
+  @media (max-width: v.$breakpoint-md) {
+    padding: v.$spacing-10 0;
+  }
+  @media (max-width: v.$breakpoint-sm) {
+    padding: v.$spacing-8 0;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: v.$spacing-6;
+    margin-bottom: v.$spacing-8;
+
+    @media (max-width: v.$breakpoint-sm) {
+      margin-bottom: v.$spacing-6;
+    }
+  }
+
+  &__title {
+    font-size: v.$font-size-3xl;
+    font-weight: v.$font-weight-bold;
+    color: v.$color-text-primary;
+    margin: 0;
+
+    @media (max-width: v.$breakpoint-md) {
+      font-size: v.$font-size-2xl;
+    }
+    @media (max-width: v.$breakpoint-sm) {
+      font-size: v.$font-size-xl;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    gap: v.$spacing-3;
+    flex-shrink: 0;
+
+    @media (max-width: v.$breakpoint-sm) {
+      gap: v.$spacing-2;
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: v.$spacing-5;
+    overflow-x: auto;
+    scroll-behavior: auto;
+    padding: v.$spacing-1 0 v.$spacing-4;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    @media (max-width: v.$breakpoint-md) {
+      gap: v.$spacing-4;
+    }
+
+    @media (max-width: v.$breakpoint-sm) {
+      gap: v.$spacing-3;
+      padding-right: v.$spacing-4;
+    }
+  }
+
+  &__item {
+    flex: 0 0 280px;
+    max-width: 280px;
+    min-width: 280px;
+
+    @media (max-width: v.$breakpoint-lg) {
+      flex-basis: 240px;
+      max-width: 240px;
+      min-width: 240px;
+    }
+    @media (max-width: v.$breakpoint-md) {
+      flex-basis: 280px;
+      max-width: 280px;
+      min-width: 280px;
+    }
+    @media (max-width: v.$breakpoint-sm) {
+      flex-basis: 280px;
+      max-width: 280px;
+      min-width: 280px;
+    }
+    @media (max-width: 360px) {
+      flex-basis: 260px;
+      max-width: 260px;
+      min-width: 260px;
+    }
+  }
+}
+
+.carousel-control {
+  width: 48px;
+  height: 48px;
+  border-radius: v.$radius-full;
+  background: v.$brand-primary-500;
+  color: v.$neutral-0;
+  border: none;
+  font-size: v.$font-size-xl;
+  cursor: pointer;
+  transition: v.$transition-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  @media (max-width: v.$breakpoint-sm) {
+    width: 36px;
+    height: 36px;
+    font-size: v.$font-size-lg;
+  }
+
+  &:hover:not(&--disabled) {
+    background: v.$brand-primary-600;
+    box-shadow: v.$shadow-md;
+    transform: scale(1.05);
+  }
+
+  &:active:not(&--disabled) {
+    background: v.$brand-primary-700;
+    transform: scale(0.95);
+  }
+
+  &--disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}

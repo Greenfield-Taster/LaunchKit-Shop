@@ -1,0 +1,168 @@
+@use "../../styles/variables" as v;
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-4;
+  width: 100%;
+
+  &__item {
+    background: v.$neutral-0;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-card;
+    overflow: hidden;
+    transition: all v.$transition-base v.$transition-timing;
+    box-shadow: v.$shadow-card;
+
+    &--active {
+      border-color: v.$brand-primary-500;
+      box-shadow: v.$shadow-card-hover;
+      transform: translateY(-2px);
+    }
+
+    &:hover:not(&--active) {
+      border-color: v.$color-border-dark;
+      box-shadow: v.$shadow-card-hover;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: v.$spacing-6;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: v.$transition-button;
+    gap: v.$spacing-5;
+
+    &:hover {
+      background: v.$neutral-50;
+    }
+
+    @media (max-width: v.$breakpoint-md) {
+      padding: v.$spacing-5;
+      gap: v.$spacing-4;
+    }
+
+    @media (max-width: v.$breakpoint-sm) {
+      padding: v.$spacing-4;
+      gap: v.$spacing-3;
+    }
+  }
+
+  &__question {
+    font-size: v.$font-size-lg;
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text-primary;
+    line-height: v.$line-height-tight;
+    flex: 1;
+    letter-spacing: v.$letter-spacing-tight;
+
+    @media (max-width: v.$breakpoint-md) {
+      font-size: v.$font-size-base;
+    }
+
+    @media (max-width: v.$breakpoint-sm) {
+      font-size: v.$font-size-base;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: v.$brand-primary-500;
+    transition: transform v.$transition-base v.$transition-timing;
+    width: 28px;
+    height: 28px;
+
+    @media (max-width: v.$breakpoint-sm) {
+      width: 24px;
+      height: 24px;
+    }
+
+    .faq__item--active & {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height v.$transition-slow v.$transition-timing;
+  }
+
+  &__answer {
+    padding: 0 v.$spacing-6 v.$spacing-6 v.$spacing-6;
+    font-size: v.$font-size-base;
+    line-height: v.$line-height-relaxed;
+    color: v.$color-text-secondary;
+    white-space: pre-line;
+
+    @media (max-width: v.$breakpoint-md) {
+      padding: 0 v.$spacing-5 v.$spacing-5 v.$spacing-5;
+      font-size: v.$font-size-base;
+    }
+
+    @media (max-width: v.$breakpoint-sm) {
+      padding: 0 v.$spacing-4 v.$spacing-4 v.$spacing-4;
+      font-size: v.$font-size-base;
+    }
+
+    p {
+      margin: 0 0 v.$spacing-3 0;
+      color: v.$color-text-secondary;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      strong {
+        color: v.$color-text-primary;
+        font-weight: v.$font-weight-semibold;
+        display: block;
+        margin-top: v.$spacing-4;
+        margin-bottom: v.$spacing-2;
+      }
+    }
+
+    ul {
+      margin: v.$spacing-3 0;
+      padding-left: v.$spacing-6;
+      list-style: none;
+
+      @media (max-width: v.$breakpoint-sm) {
+        padding-left: v.$spacing-5;
+      }
+
+      li {
+        position: relative;
+        margin-bottom: v.$spacing-3;
+        padding-left: v.$spacing-4;
+        line-height: v.$line-height-relaxed;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0.5em;
+          width: 6px;
+          height: 6px;
+          background: v.$brand-primary-500;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    > p:first-child,
+    > ul:first-child {
+      margin-top: 0;
+    }
+  }
+}
