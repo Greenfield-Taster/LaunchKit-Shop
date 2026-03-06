@@ -163,10 +163,34 @@ async function updatePackageJson(projectDir, projectName) {
   let content = await readFile(pkgFile, "utf-8");
   const pkg = JSON.parse(content);
 
-  pkg.name = projectName;
-  pkg.version = "0.1.0";
+  const devOnly = ["@vitejs/plugin-react", "sass", "vite"];
 
-  await writeFile(pkgFile, JSON.stringify(pkg, null, 2) + "\n", "utf-8");
+  const dependencies = {};
+  const devDependencies = {};
+
+  for (const [name, version] of Object.entries(pkg.devDependencies || {})) {
+    if (devOnly.includes(name)) {
+      devDependencies[name] = version;
+    } else {
+      dependencies[name] = version;
+    }
+  }
+
+  const newPkg = {
+    name: projectName,
+    version: "0.1.0",
+    type: "module",
+    scripts: {
+      dev: "vite",
+      build: "vite build",
+      lint: "eslint .",
+      preview: "vite preview",
+    },
+    dependencies,
+    devDependencies,
+  };
+
+  await writeFile(pkgFile, JSON.stringify(newPkg, null, 2) + "\n", "utf-8");
 }
 
 async function updateSeoData(projectDir, projectName) {

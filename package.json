@@ -1,6 +1,6 @@
 {
   "name": "@greenfield-taster/launchkit-shop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "CLI wizard to scaffold a ready-to-use React shop template with auto-generated color palette",
   "keywords": [
@@ -29,7 +29,7 @@
     "preview": "vite preview",
     "create": "node cli/create.js"
   },
-  "dependencies": {
+  "devDependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.9",
@@ -37,9 +37,7 @@
     "lucide-react": "^0.577.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.1"
-  },
-  "devDependencies": {
+    "react-router-dom": "^7.13.1",
     "@vitejs/plugin-react": "^5.1.4",
     "sass": "^1.97.3",
     "vite": "^7.3.1"
