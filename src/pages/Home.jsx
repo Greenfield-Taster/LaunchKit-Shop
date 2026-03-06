@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ShieldCheck, Truck, RefreshCw, Headphones } from "lucide-react";
-import ProductCard from "../components/ProductCard/ProductCard";
+import Carousel from "../components/Carousel/Carousel";
 import usePageMeta from "../hooks/usePageMeta";
 import { SEO } from "../utils/seoData";
 import products from "../data/products.json";
@@ -9,9 +9,11 @@ import "../styles/pages/_home.scss";
 const Home = () => {
   usePageMeta(SEO.home);
 
-  const popularProducts = products
-    .filter((p) => p.category.includes("popular"))
-    .slice(0, 6);
+  const popularProducts = products.filter((p) =>
+    Array.isArray(p.category)
+      ? p.category.includes("popular")
+      : p.category === "popular"
+  );
 
   const benefits = [
     {
@@ -76,19 +78,10 @@ const Home = () => {
 
       {popularProducts.length > 0 && (
         <section className="popular">
-          <div className="container">
-            <h2 className="section-title">Популярні товари</h2>
-            <div className="popular__grid">
-              {popularProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-            <div className="popular__more">
-              <Link to="/catalog" className="popular__more-link">
-                Переглянути весь каталог
-              </Link>
-            </div>
-          </div>
+          <Carousel
+            products={popularProducts}
+            title="Популярні товари"
+          />
         </section>
       )}
 

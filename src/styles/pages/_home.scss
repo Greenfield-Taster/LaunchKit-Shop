@@ -9,9 +9,9 @@
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1620px;
   margin: 0 auto;
-  padding: 0 v.$spacing-8;
+  padding: 0 v.$spacing-10;
   width: 100%;
   box-sizing: border-box;
 
@@ -48,7 +48,7 @@
 
 .hero {
   padding: v.$spacing-16 0;
-  background: linear-gradient(to bottom, #f8fafc 0%, #e2e8f0 100%);
+  background: v.$color-background;
   min-height: 45vh;
   display: flex;
   align-items: center;
@@ -67,29 +67,19 @@
 
   &__content {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    text-align: center;
     position: relative;
     z-index: 10;
-
-    @media (max-width: v.$breakpoint-lg) {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
   }
 
   &__left {
-    max-width: 650px;
+    max-width: 750px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: v.$spacing-4;
-
-    @media (max-width: v.$breakpoint-lg) {
-      max-width: 100%;
-      width: 100%;
-      align-items: center;
-    }
   }
 
   &__text {
@@ -119,12 +109,8 @@
     line-height: 1.6;
     color: v.$color-text-secondary;
     margin: 0;
-    max-width: 520px;
+    max-width: 580px;
 
-    @media (max-width: v.$breakpoint-lg) {
-      font-size: 16px;
-      max-width: 100%;
-    }
     @media (max-width: v.$breakpoint-sm) {
       font-size: 15px;
     }
@@ -134,12 +120,9 @@
     display: flex;
     gap: v.$spacing-4;
     flex-wrap: wrap;
+    justify-content: center;
     margin-top: v.$spacing-8;
 
-    @media (max-width: v.$breakpoint-lg) {
-      justify-content: center;
-      width: 100%;
-    }
     @media (max-width: v.$breakpoint-sm) {
       flex-direction: column;
       width: 100%;
@@ -170,7 +153,7 @@
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px #11397966;
+        box-shadow: 0 10px 25px rgba(v.$brand-primary-800, 0.4);
       }
       &:active {
         transform: translateY(0);
@@ -180,17 +163,17 @@
     &--secondary {
       background-color: v.$neutral-0;
       color: v.$color-text-primary;
-      border-color: #e2e8f0;
+      border-color: v.$color-border;
 
       &:hover {
-        background-color: #f8fafc;
-        border-color: #cbd5e1;
+        background-color: v.$neutral-50;
+        border-color: v.$neutral-300;
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+        box-shadow: 0 10px 25px rgba(v.$brand-primary-800, 0.1);
       }
       &:active {
         transform: translateY(0);
-        background-color: #e2e8f0;
+        background-color: v.$neutral-100;
       }
     }
   }
@@ -201,64 +184,17 @@
 // ========================================
 
 .popular {
-  padding: v.$spacing-20 0;
-  background: v.$neutral-0;
+  padding: v.$spacing-16 0;
+  background: v.$color-background;
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
 
   @media (max-width: v.$breakpoint-md) {
-    padding: v.$spacing-16 0;
-  }
-  @media (max-width: v.$breakpoint-sm) {
     padding: v.$spacing-12 0;
   }
-
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: v.$spacing-6;
-
-    @media (max-width: v.$breakpoint-lg) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: v.$spacing-5;
-    }
-    @media (max-width: v.$breakpoint-md) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: v.$spacing-4;
-    }
-    @media (max-width: 480px) {
-      grid-template-columns: 1fr;
-      gap: v.$spacing-4;
-    }
-  }
-
-  &__more {
-    text-align: center;
-    margin-top: v.$spacing-10;
-  }
-
-  &__more-link {
-    display: inline-block;
-    padding: v.$spacing-3 v.$spacing-8;
-    background: v.$neutral-0;
-    color: v.$brand-primary-500;
-    font-size: v.$font-size-base;
-    font-weight: v.$font-weight-semibold;
-    border: 2px solid v.$brand-primary-500;
-    border-radius: v.$radius-button;
-    text-decoration: none;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: v.$brand-primary-500;
-      color: v.$neutral-0;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px #11397966;
-    }
-    &:active {
-      transform: translateY(0);
-    }
+  @media (max-width: v.$breakpoint-sm) {
+    padding: v.$spacing-10 0;
   }
 }
 
@@ -268,7 +204,7 @@
 
 .benefits {
   padding: v.$spacing-6 0 v.$spacing-10;
-  background: v.$neutral-100;
+  background: v.$color-background;
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
@@ -411,7 +347,8 @@
 // ========================================
 
 .cta {
-  padding: v.$spacing-8 0 v.$spacing-20;
+  padding: v.$spacing-8 0 v.$spacing-16;
+  background: v.$color-background;
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;

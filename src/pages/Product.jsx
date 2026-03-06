@@ -3,6 +3,7 @@ import { useState, useMemo } from "react";
 import { useCart } from "../hooks/useCart";
 import ProductGallery from "../components/ProductGallery/ProductGallery";
 import WishlistButton from "../components/WishlistButton/WishlistButton";
+import Carousel from "../components/Carousel/Carousel";
 import usePageMeta from "../hooks/usePageMeta";
 import { SEO } from "../utils/seoData";
 import products from "../data/products.json";
@@ -24,6 +25,20 @@ const Product = () => {
     () => reviews.filter((r) => r.productId === parseInt(id)),
     [id],
   );
+
+  const similarProducts = useMemo(() => {
+    if (!product) return [];
+    const category = Array.isArray(product.category)
+      ? product.category[0]
+      : product.category;
+    return products
+      .filter((p) => p.id !== product.id)
+      .filter((p) => {
+        const pCat = Array.isArray(p.category) ? p.category : [p.category];
+        return pCat.includes(category);
+      })
+      .slice(0, 8);
+  }, [product]);
 
   const averageRating = useMemo(() => {
     if (productReviews.length === 0) return 0;
@@ -296,6 +311,15 @@ const Product = () => {
           </div>
         </div>
       </section>
+
+      {similarProducts.length > 0 && (
+        <section className="similar-products">
+          <Carousel
+            products={similarProducts}
+            title="Схожі товари"
+          />
+        </section>
+      )}
     </div>
   );
 };
