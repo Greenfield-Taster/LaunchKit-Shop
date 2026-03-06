@@ -7,7 +7,7 @@ const PROMO_STORAGE_KEY = "cart_promo";
 const MOCK_PROMO_CODES = {
   SALE10: { discount: 10, type: "percentage" },
   SAVE50: { discount: 50, type: "fixed" },
-  WELCOME: { discount: 15, type: "percentage" },
+  WELCOM: { discount: 15, type: "percentage" },
 };
 
 const loadFromStorage = (key, fallback) => {
@@ -20,8 +20,12 @@ const loadFromStorage = (key, fallback) => {
 };
 
 export const CartProvider = ({ children, currency = "₴" }) => {
-  const [items, setItems] = useState(() => loadFromStorage(CART_STORAGE_KEY, []));
-  const [promoCode, setPromoCode] = useState(() => loadFromStorage(PROMO_STORAGE_KEY, null));
+  const [items, setItems] = useState(() =>
+    loadFromStorage(CART_STORAGE_KEY, []),
+  );
+  const [promoCode, setPromoCode] = useState(() =>
+    loadFromStorage(PROMO_STORAGE_KEY, null),
+  );
 
   useEffect(() => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
@@ -53,7 +57,9 @@ export const CartProvider = ({ children, currency = "₴" }) => {
       return;
     }
     setItems((prev) =>
-      prev.map((item) => (item.id === id ? { ...item, qty: Math.max(1, qty) } : item))
+      prev.map((item) =>
+        item.id === id ? { ...item, qty: Math.max(1, qty) } : item,
+      ),
     );
   }, []);
 
@@ -71,7 +77,11 @@ export const CartProvider = ({ children, currency = "₴" }) => {
     const promo = MOCK_PROMO_CODES[normalized];
 
     if (promo) {
-      setPromoCode({ code: normalized, discount: promo.discount, type: promo.type });
+      setPromoCode({
+        code: normalized,
+        discount: promo.discount,
+        type: promo.type,
+      });
       return { success: true, message: `Промокод ${normalized} застосовано!` };
     }
 
@@ -83,7 +93,10 @@ export const CartProvider = ({ children, currency = "₴" }) => {
   }, []);
 
   const totals = useMemo(() => {
-    const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);
+    const subtotal = items.reduce(
+      (sum, item) => sum + item.price * item.qty,
+      0,
+    );
     let discount = 0;
     if (promoCode) {
       if (promoCode.type === "percentage") {
@@ -114,7 +127,18 @@ export const CartProvider = ({ children, currency = "₴" }) => {
       applyPromoCode,
       removePromoCode,
     }),
-    [items, addItem, updateQty, removeItem, clearCart, totals, currency, promoCode, applyPromoCode, removePromoCode]
+    [
+      items,
+      addItem,
+      updateQty,
+      removeItem,
+      clearCart,
+      totals,
+      currency,
+      promoCode,
+      applyPromoCode,
+      removePromoCode,
+    ],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
