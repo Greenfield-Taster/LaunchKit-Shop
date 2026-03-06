@@ -1,0 +1,67 @@
+@use "../../styles/variables" as v;
+
+.error-boundary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: v.$spacing-8;
+  text-align: center;
+
+  &__icon {
+    color: v.$warning;
+    margin-bottom: v.$spacing-6;
+  }
+
+  &__title {
+    font-size: v.$font-size-2xl;
+    font-weight: v.$font-weight-bold;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-4;
+  }
+
+  &__text {
+    font-size: v.$font-size-base;
+    color: v.$color-text-secondary;
+    margin-bottom: v.$spacing-8;
+    max-width: 480px;
+    line-height: v.$line-height-relaxed;
+  }
+
+  &__actions {
+    display: flex;
+    gap: v.$spacing-4;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-2;
+    padding: v.$spacing-3 v.$spacing-6;
+    border-radius: v.$radius-button;
+    font-size: v.$font-size-base;
+    font-weight: v.$font-weight-medium;
+    transition: v.$transition-button;
+    border: none;
+
+    &--primary {
+      background: v.$brand-primary-500;
+      color: v.$color-text-inverse;
+
+      &:hover {
+        background: v.$brand-primary-600;
+      }
+    }
+
+    &--outline {
+      background: transparent;
+      color: v.$brand-primary-500;
+      border: 1px solid v.$brand-primary-500;
+
+      &:hover {
+        background: v.$brand-primary-50;
+      }
+    }
+  }
+}
