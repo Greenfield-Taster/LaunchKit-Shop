@@ -1,0 +1,185 @@
+[
+  {
+    "id": 1,
+    "name": "Товар Преміум",
+    "description": "Високоякісний товар з преміальних матеріалів. Ідеальний вибір для вимогливих покупців.",
+    "price": 2400,
+    "oldPrice": 3000,
+    "category": ["popular", "sale"],
+    "image": "/images/product-1.jpg",
+    "images": ["/images/product-1.jpg", "/images/product-1-2.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "Натуральний" },
+      { "key": "Вага", "value": "1.2 кг" },
+      { "key": "Колір", "value": "Сірий" },
+      { "key": "Виробник", "value": "Україна" }
+    ],
+    "inStock": true,
+    "rating": 4.8,
+    "reviewsCount": 24
+  },
+  {
+    "id": 2,
+    "name": "Товар Класик",
+    "description": "Перевірена часом класична модель. Надійність та простота у використанні за доступною ціною.",
+    "price": 1200,
+    "category": ["popular"],
+    "image": "/images/product-2.jpg",
+    "images": ["/images/product-2.jpg", "/images/product-2-2.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "Комбінований" },
+      { "key": "Вага", "value": "0.8 кг" },
+      { "key": "Розмір", "value": "Стандартний" },
+      { "key": "Гарантія", "value": "12 місяців" }
+    ],
+    "inStock": true,
+    "rating": 4.5,
+    "reviewsCount": 18
+  },
+  {
+    "id": 3,
+    "name": "Товар Стандарт",
+    "description": "Універсальне рішення для щоденного використання. Оптимальне поєднання якості та ціни.",
+    "price": 800,
+    "category": ["popular", "new"],
+    "image": "/images/product-3.jpg",
+    "images": ["/images/product-3.jpg", "/images/product-3-2.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "Синтетичний" },
+      { "key": "Вага", "value": "0.5 кг" },
+      { "key": "Колір", "value": "Білий" }
+    ],
+    "inStock": true,
+    "rating": 4.2,
+    "reviewsCount": 31
+  },
+  {
+    "id": 4,
+    "name": "Товар Люкс",
+    "description": "Ексклюзивна модель преміум-класу з унікальним дизайном. Створена для тих, хто цінує найкраще.",
+    "price": 4800,
+    "oldPrice": 5200,
+    "category": ["sale"],
+    "image": "/images/product-4.jpg",
+    "images": ["/images/product-4.jpg", "/images/product-4-2.jpg", "/images/product-4-3.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "Преміальний" },
+      { "key": "Вага", "value": "2.1 кг" },
+      { "key": "Колір", "value": "Чорний" },
+      { "key": "Виробник", "value": "Італія" },
+      { "key": "Гарантія", "value": "24 місяці" }
+    ],
+    "inStock": true,
+    "rating": 4.9,
+    "reviewsCount": 12
+  },
+  {
+    "id": 5,
+    "name": "Товар Ультра",
+    "description": "Інноваційна модель з покращеними характеристиками. Найновіші технології для максимального комфорту.",
+    "price": 3500,
+    "category": ["new"],
+    "image": "/images/product-5.jpg",
+    "images": ["/images/product-5.jpg", "/images/product-5-2.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "Композитний" },
+      { "key": "Вага", "value": "1.5 кг" },
+      { "key": "Колір", "value": "Синій" },
+      { "key": "Розмір", "value": "Великий" }
+    ],
+    "inStock": true,
+    "rating": 4.7,
+    "reviewsCount": 8
+  },
+  {
+    "id": 6,
+    "name": "Товар Оптима",
+    "description": "Збалансована модель для практичних покупців. Все необхідне без зайвих витрат.",
+    "price": 1500,
+    "oldPrice": 1900,
+    "category": ["popular", "sale"],
+    "image": "/images/product-6.jpg",
+    "images": ["/images/product-6.jpg", "/images/product-6-2.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "Натуральний" },
+      { "key": "Вага", "value": "0.9 кг" },
+      { "key": "Виробник", "value": "Україна" }
+    ],
+    "inStock": true,
+    "rating": 4.4,
+    "reviewsCount": 42
+  },
+  {
+    "id": 7,
+    "name": "Товар Еко",
+    "description": "Екологічно чистий товар з натуральних матеріалів. Безпечний для здоров'я та довкілля.",
+    "price": 2100,
+    "category": ["new"],
+    "image": "/images/product-7.jpg",
+    "images": ["/images/product-7.jpg", "/images/product-7-2.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "100% органічний" },
+      { "key": "Вага", "value": "0.7 кг" },
+      { "key": "Колір", "value": "Зелений" },
+      { "key": "Сертифікат", "value": "ISO 14001" }
+    ],
+    "inStock": false,
+    "rating": 4.6,
+    "reviewsCount": 15
+  },
+  {
+    "id": 8,
+    "name": "Товар Про",
+    "description": "Професійна модель для досвідчених користувачів. Розширений функціонал та підвищена надійність.",
+    "price": 3800,
+    "category": ["popular"],
+    "image": "/images/product-8.jpg",
+    "images": ["/images/product-8.jpg", "/images/product-8-2.jpg", "/images/product-8-3.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "Посилений" },
+      { "key": "Вага", "value": "1.8 кг" },
+      { "key": "Колір", "value": "Темно-сірий" },
+      { "key": "Розмір", "value": "Великий" },
+      { "key": "Гарантія", "value": "36 місяців" }
+    ],
+    "inStock": true,
+    "rating": 4.9,
+    "reviewsCount": 27
+  },
+  {
+    "id": 9,
+    "name": "Товар Лайт",
+    "description": "Легка та компактна модель для мобільного використання. Зручно брати з собою в подорож.",
+    "price": 650,
+    "category": ["new", "sale"],
+    "oldPrice": 900,
+    "image": "/images/product-9.jpg",
+    "images": ["/images/product-9.jpg", "/images/product-9-2.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "Полімерний" },
+      { "key": "Вага", "value": "0.3 кг" },
+      { "key": "Колір", "value": "Бежевий" }
+    ],
+    "inStock": true,
+    "rating": 4.1,
+    "reviewsCount": 9
+  },
+  {
+    "id": 10,
+    "name": "Товар Комфорт",
+    "description": "Створений з турботою про ваш комфорт. Ергономічний дизайн та приємні матеріали на дотик.",
+    "price": 1800,
+    "category": ["popular"],
+    "image": "/images/product-10.jpg",
+    "images": ["/images/product-10.jpg", "/images/product-10-2.jpg"],
+    "characteristics": [
+      { "key": "Матеріал", "value": "Текстильний" },
+      { "key": "Вага", "value": "1.0 кг" },
+      { "key": "Колір", "value": "Коричневий" },
+      { "key": "Виробник", "value": "Україна" }
+    ],
+    "inStock": false,
+    "rating": 4.3,
+    "reviewsCount": 36
+  }
+]
