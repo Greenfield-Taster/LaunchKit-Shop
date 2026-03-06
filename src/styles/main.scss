@@ -1,0 +1,159 @@
+@use "./variables" as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: v.$font-size-base;
+  letter-spacing: v.$letter-spacing-normal;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: v.$font-family-base;
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-regular;
+  line-height: v.$line-height-normal;
+  color: v.$color-text-primary;
+  background-color: v.$color-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: v.$brand-primary-500;
+  text-decoration: none;
+  cursor: pointer !important;
+
+  svg,
+  img,
+  span,
+  i {
+    pointer-events: none;
+    cursor: inherit !important;
+  }
+}
+
+button,
+[role="button"],
+label {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer !important;
+
+  svg,
+  img,
+  span,
+  i {
+    pointer-events: none;
+    cursor: inherit !important;
+  }
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: text !important;
+  user-select: text;
+}
+
+div, span, p, h1, h2, h3, h4, h5, h6, li, ul, ol, section, article, main, header, footer, nav, img, svg {
+  cursor: default !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.content,
+.description,
+article p,
+.contact-item,
+.contacts__info-link,
+.contacts__info-text,
+.legal-modal__text {
+  user-select: text;
+  -webkit-user-select: text;
+
+  * {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
+.MuiChip-root,
+.MuiChip-label,
+.MuiButtonBase-root,
+[class*="Mui"] {
+  cursor: pointer !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: v.$z-tooltip;
+  background: v.$brand-primary-500;
+  color: v.$color-text-inverse;
+  padding: v.$spacing-2 v.$spacing-4;
+  border-radius: v.$radius-button;
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-medium;
+  text-decoration: none;
+  cursor: pointer !important;
+  user-select: none;
+
+  &:focus {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: v.$spacing-2;
+    outline: 2px solid v.$brand-primary-300;
+    outline-offset: 2px;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.main {
+  flex: 1;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100vw;
+  padding-top: 64px;
+
+  @media (max-width: 767px) {
+    padding-top: 56px;
+  }
+}
