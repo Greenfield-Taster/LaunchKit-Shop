@@ -109,16 +109,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="cta">
-        <div className="container">
-          <div className="cta__content">
-            <h2 className="cta__title">Потрібна допомога з вибором?</h2>
-            <Link to="/contacts" className="cta__button">
-              Зв'язатися з нами
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
