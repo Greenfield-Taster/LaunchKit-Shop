@@ -1,6 +1,6 @@
 {
   "name": "@greenfield-taster/launchkit-shop",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "CLI wizard to scaffold a ready-to-use React shop template with auto-generated color palette",
   "keywords": [
