@@ -3,7 +3,6 @@
 A command-line tool that scaffolds a ready-to-run React 19 e-commerce storefront. Answer two questions — a project name and one brand colour — and get a working app whose whole SCSS palette is computed from that colour.
 
 - **npm:** https://www.npmjs.com/package/@greenfield-taster/launchkit-shop
-- **Case study:** https://horbachov.com/#projects
 - **Sister package:** [`@greenfield-taster/launchkit-landing`](https://www.npmjs.com/package/@greenfield-taster/launchkit-landing) does the same for one-page landings.
 
 ## Quick start
